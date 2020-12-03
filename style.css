@@ -1,0 +1,80 @@
+/*************** THE LAYOUT ******************************
+**********************************************************/
+
+* {
+    margin: 0px;
+    padding: 0px;
+    border: 0.5px solid black;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+html {
+    height: 100%; // The height of your html document takes 100% size of window
+}
+
+body {
+    height: 100%; // Body takes 100% height of html which is 100% height of window
+}
+
+.container {
+    height: 100%; // Container takes 100% height of body which is 100% height of html which is 100% of window
+}
+
+body {
+    background-color: #eeeded;
+    width: 100%;
+    height: 100%;
+}
+
+.main-header {
+    grid-area: header;
+}
+
+.main-nav {
+    grid-area: nav;
+}
+
+.sidebar {
+    grid-area: sidebar;
+}
+
+.content {
+    grid-area: content;
+}
+
+.ad {
+    grid-area: ad;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr 0.5fr 5.5fr;
+    grid-template-areas: "header" "nav" "content" "ad" "sidebar" "footer";
+}
+
+@media only screen and (min-device-width: 425px) and (max-device-width: 768px) {
+    .container {
+        display: grid;
+        grid-template-columns: 65% 35%;
+        grid-template-rows: 2fr 1fr 5.5fr 5.5fr;
+        grid-template-areas: "header header" "nav nav" "content sidebar" "content ad" "footer footer";
+    }
+}
+
+@media only screen and (min-device-width: 768px) {
+    .container {
+        display: grid;
+        grid-template-columns: 20% 60% 20%;
+        grid-template-rows: 2fr 1fr 9fr;
+        grid-template-areas: "header header header" "nav nav nav" "ad content sidebar" "footer footer footer";
+    }
+}
+
+
+/*************** Template design *************************
+**********************************************************/
